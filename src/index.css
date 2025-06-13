@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'MonumentExtended-Regular';
+  src: url('/public/assets/fonts/MonumentExtended-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MonumentExtended-Ultrabold';
+  src: url('/public/assets/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
