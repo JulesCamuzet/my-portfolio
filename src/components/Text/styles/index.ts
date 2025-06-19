@@ -9,19 +9,24 @@ export const StyledWrapper = styled.p<{
   $light?: boolean
   $bold?: boolean
   $big?: boolean
+  $noMargin?: boolean
   $theme: Theme
 }>`
-  font-size: ${(props) => (props.$big ? fontSizes.Medium : fontSizes.Small)};
-  margin-bottom: ${Margins.M4};
+  font-size: ${(props) => (props.$big ? fontSizes.Small : fontSizes.XS)};
+  margin-bottom: ${(props) => (props.$noMargin ? '0' : Margins.M4)};
   color: ${(props) =>
     props.$theme === Theme.LIGHT
       ? props.$light
-        ? colors.blueViolet[500]
-        : colors.blueViolet[700]
+        ? colors.mainColor[500]
+        : colors.mainColor[700]
       : props.$light
       ? colors.white[700]
       : colors.white[100]};
-  font-family: ${(props) =>
-    props.$bold ? 'MonumentExtended-Ultrabold' : 'MonumentExtended-Regular'};
+  font-family: 'Roboto';
   line-height: 1.61;
+  font-weight: ${(props) => (props.$bold ? 700 : 300)};
+
+  @media all and (max-width: 768px) {
+    font-size: ${fontSizes.Small};
+  }
 `

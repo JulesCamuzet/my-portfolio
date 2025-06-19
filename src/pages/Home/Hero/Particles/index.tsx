@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 
 import { themeContext } from '../../../../contexts/theme'
 import { StyledWrapper } from './styles'
@@ -16,12 +16,18 @@ const getRandomColorIndex = () => {
 const Particles = () => {
   const { theme } = useContext(themeContext)
 
-  const blobs = Array.from({ length: 10 }, (_, i) => ({
-    colorIndex: getRandomColorIndex(),
-    size: getRandom(100, 300),
-    top: getRandom(0, 100),
-    left: getRandom(0, 100),
-  }))
+  const blobs = useMemo<
+    { colorIndex: string; size: number; top: number; left: number }[]
+  >(
+    () =>
+      Array.from({ length: 10 }, (_, i) => ({
+        colorIndex: getRandomColorIndex(),
+        size: getRandom(100, 300),
+        top: getRandom(0, 100),
+        left: getRandom(0, 100),
+      })),
+    [1]
+  )
 
   return (
     <StyledWrapper $theme={theme}>

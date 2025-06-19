@@ -15,7 +15,7 @@ type PropsType = {
 const Particle = ({ colorIndex, size, top, left, theme }: PropsType) => {
   const color =
     theme === Theme.LIGHT
-      ? colors.blueViolet[colorIndex]
+      ? colors.mainColor[colorIndex]
       : colors.white[colorIndex]
 
   return <StyledWrapper $color={color} $size={size} $left={left} $top={top} />

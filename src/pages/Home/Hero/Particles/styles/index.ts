@@ -12,5 +12,5 @@ export const StyledWrapper = styled.div<{ $theme: Theme }>`
   z-index: 0;
   overflow: hidden;
   background-color: ${(props) =>
-    props.$theme === Theme.DARK ? colors.blueViolet[800] : colors.white[100]};
+    props.$theme === Theme.DARK ? colors.mainColor[800] : colors.white[100]};
 `

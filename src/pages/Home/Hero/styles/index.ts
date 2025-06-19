@@ -34,28 +34,23 @@ export const StyledPicturePart = styled.div`
 
 export const StyledImg = styled.img`
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
   border-radius: 1000px;
-  border: solid ${colors.blueViolet[200]} 1px;
+  /* border: solid ${colors.mainColor[200]} 1px; */
+  box-shadow: 0 0 16px 16px white inset;
 `
 
 export const StyledNetworksContainer = styled.div<{ $theme: Theme }>`
   display: flex;
   align-items: center;
-  gap: ${Margins.M4};
-  border: solid
-    ${(props) =>
-      props.$theme === Theme.LIGHT
-        ? colors.blueViolet[700]
-        : colors.blueViolet[200]}
-    1px;
+  gap: ${Margins.M7};
   border-radius: 4px;
   box-sizing: border-box;
-  padding: ${Paddings.P3};
+  padding: ${Paddings.P4};
   background-color: ${(props) =>
-    props.$theme === Theme.LIGHT ? colors.white[50] : colors.blueViolet[950]};
+    props.$theme === Theme.LIGHT ? colors.white[50] : colors.mainColor[950]};
   width: fit-content;
 `

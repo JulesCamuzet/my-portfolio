@@ -1,5 +1,10 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router'
 
+import GithubIcon from '../../../components/icons/Github'
+import LinkedinIcon from '../../../components/icons/Linkedin'
+import { Theme } from '../../../hoc/Theme/types'
+import { colors } from '../../../constants/colors'
 import Title from '../../../components/Title'
 import Text from '../../../components/Text'
 import { themeContext } from '../../../contexts/theme'
@@ -12,6 +17,8 @@ import {
   StyledTextPart,
 } from './styles'
 import Particles from './Particles'
+import CallToAction from '../../../components/CallToAction'
+import { Margins } from '../../../constants/margins'
 
 import picture from 'url:../../../../public/assets/images/jules-camuzet.jpeg'
 
@@ -19,13 +26,17 @@ export const Hero = () => {
   const { theme } = useContext(themeContext)
 
   return (
-    <BaseSection tall background={'transparent'} style={{ position: 'relative' }}>
+    <BaseSection
+      tall
+      background={'transparent'}
+      style={{ position: 'relative' }}
+    >
       <Particles />
       <StyledContainer>
         <StyledTextPart>
           <Title>Jules Camuzet</Title>
           <Title type="h2">Developer</Title>
-          <Text light>
+          <Text big>
             Passionate about computer science and development, I am seeking a
             work-study opportunity starting in October to further enhance my
             skills and contribute meaningfully to innovative and impactful
@@ -39,8 +50,28 @@ export const Hero = () => {
             offer when building user-facing applications.
           </Text>
           <StyledNetworksContainer $theme={theme}>
-
+            <Link target="_blank" to={'https://github.com'}>
+              <GithubIcon
+                color={
+                  theme === Theme.DARK
+                    ? colors.white[50]
+                    : colors.mainColor[800]
+                }
+                pointer
+              />
+            </Link>
+            <Link target="_blank" to={'https://linkedin.com'}>
+              <LinkedinIcon
+                color={
+                  theme === Theme.DARK
+                    ? colors.white[50]
+                    : colors.mainColor[800]
+                }
+                pointer
+              />
+            </Link>
           </StyledNetworksContainer>
+          <CallToAction style={{ marginTop: Margins.M8 }} onClick={() => {}}>Get in touch</CallToAction>
         </StyledTextPart>
         <StyledPicturePart>
           <StyledImg src={picture} srcSet={picture} alt="Jules Camuzet" />

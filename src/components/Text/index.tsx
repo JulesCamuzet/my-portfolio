@@ -7,13 +7,22 @@ type PropsType = {
   children: ReactNode
   light?: boolean
   bold?: boolean
+  small?: boolean
+  big?: boolean
+  noMargin?: boolean
 }
 
-const Text = ({ children, light, bold }: PropsType) => {
+const Text = ({ children, light, bold, big, small, noMargin }: PropsType) => {
   const { theme } = useContext(themeContext)
 
   return (
-    <StyledWrapper $theme={theme} $bold={bold} $light={light}>
+    <StyledWrapper
+      $big={big}
+      $theme={theme}
+      $bold={bold}
+      $light={light}
+      $noMargin={noMargin}
+    >
       {children}
     </StyledWrapper>
   )

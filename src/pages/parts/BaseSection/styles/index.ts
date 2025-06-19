@@ -10,8 +10,13 @@ export const StyledWrapper = styled.div<{
 }>`
   background: ${(props) => props.$background};
   box-sizing: border-box;
-  padding: ${props => props.$tall ? Paddings.P10 : Paddings.P7} ${Paddings.P5};
+  padding: ${(props) => (props.$tall ? Paddings.P9 : Paddings.P8)} ${Paddings.P5};
   width: 100%;
+  position: relative;
+
+  @media all and (max-width: 768px) {
+    padding: ${(props) => (props.$tall ? Paddings.P8 : Paddings.P5)} ${Paddings.P5};
+  }
 `
 
 export const StyledContent = styled.div`
