@@ -42,6 +42,7 @@ const Form = () => {
       if (result === null) {
         setError('Une erreur est survenue, veuillez réessayer plus tard.')
         setSuccess('')
+        setHasBeenSubmitted(true)
       } else {
         setError('')
         setHasBeenSubmitted(false)
@@ -54,9 +55,10 @@ const Form = () => {
           message: '',
         })
       }
+    } else {
+      setHasBeenSubmitted(true)
     }
 
-    setHasBeenSubmitted(true)
     setIsLoading(false)
   }
 
