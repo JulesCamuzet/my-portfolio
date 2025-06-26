@@ -19,7 +19,6 @@ const CallToAction = ({ children, onClick, disabled, style }: PropsType) => {
   const { theme } = useContext(themeContext)
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault()
     !disabled && onClick()
   }
 

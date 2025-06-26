@@ -34,7 +34,7 @@ const Footer = () => {
         💖 Let's connect and build something amazing together!
       </Text>
       <StyledLogoContainer>
-        <Link to={'github.com'} target="_blank">
+        <Link to={'https://linktr.ee/julescamuzet'} target="_blank">
           <GithubIcon
             color={
               theme === Theme.DARK ? colors.white[50] : colors.mainColor[800]
