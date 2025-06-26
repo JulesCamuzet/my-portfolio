@@ -48,6 +48,7 @@ const Textarea = ({
         value={value}
         name={name}
         $theme={theme}
+        $hasError={!!error}
       ></StyledInput>
       {error && <StyledErrorMessage>{error}</StyledErrorMessage>}
     </StyledWrapper>
