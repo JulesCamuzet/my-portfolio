@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext } from 'react'
+import React, { CSSProperties, ReactNode, useContext } from 'react'
 
 import { themeContext } from '../../contexts/theme'
 import { StyledWrapper } from './styles'
@@ -10,9 +10,18 @@ type PropsType = {
   small?: boolean
   big?: boolean
   noMargin?: boolean
+  style?: CSSProperties
 }
 
-const Text = ({ children, light, bold, big, small, noMargin }: PropsType) => {
+const Text = ({
+  children,
+  light,
+  bold,
+  big,
+  small,
+  noMargin,
+  style,
+}: PropsType) => {
   const { theme } = useContext(themeContext)
 
   return (
@@ -22,6 +31,7 @@ const Text = ({ children, light, bold, big, small, noMargin }: PropsType) => {
       $bold={bold}
       $light={light}
       $noMargin={noMargin}
+      style={style}
     >
       {children}
     </StyledWrapper>

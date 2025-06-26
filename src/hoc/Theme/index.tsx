@@ -1,24 +1,15 @@
 import React, { ReactNode, useState } from 'react'
 
 import { themeContext } from '../../contexts/theme'
-import { Theme } from './types'
 import ThemeSwitch from '../../components/ThemeSwitch'
+import { Theme } from './types'
 
 type PropsType = {
   children: ReactNode
 }
 
 const ThemeHOC = ({ children }: PropsType) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      return Theme.DARK
-    } else {
-      return Theme.LIGHT
-    }
-  })
+  const [theme, setTheme] = useState<Theme>(Theme.LIGHT)
 
   const handleClick = () => {
     setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))

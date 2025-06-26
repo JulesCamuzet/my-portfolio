@@ -7,12 +7,14 @@ import Map from './Map'
 import { StyledContent } from './styles'
 
 const Contact = () => {
+  const enableMap = process.env.ENABLE_MAP === '1'
+
   return (
     <BaseSection tall>
       <Title type="h2">Get in touch</Title>
       <StyledContent>
         <Form />
-        <Map />
+        {enableMap && <Map />}
       </StyledContent>
     </BaseSection>
   )
