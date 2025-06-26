@@ -16,7 +16,10 @@ export const StyledLabel = styled.label`
   width: 100%;
 `
 
-export const StyledInput = styled.textarea<{ $theme: Theme }>`
+export const StyledInput = styled.textarea<{
+  $theme: Theme
+  $hasError: boolean
+}>`
   width: 100%;
   box-sizing: border-box;
   padding: ${Paddings.P3};
@@ -27,14 +30,22 @@ export const StyledInput = styled.textarea<{ $theme: Theme }>`
   resize: none;
   overflow: scroll;
   height: 300px;
-  color: ${props => props.$theme === Theme.LIGHT ? colors.mainColor[700] : colors.white[200]};
+  color: ${(props) =>
+    props.$theme === Theme.LIGHT ? colors.mainColor[700] : colors.white[200]};
   background-color: transparent;
-  border: solid 1px ${props => props.$theme === Theme.LIGHT ? colors.mainColor[600] : colors.mainColor[600]};
+  border: solid 1px;
+  border-color: ${(props) =>
+    props.$hasError
+      ? '#FA5C19'
+      : props.$theme === Theme.LIGHT
+      ? colors.mainColor[600]
+      : colors.mainColor[600]};
 
   &::placeholder {
     font-style: italic;
-    opacity: .5;
-    color: ${props => props.$theme === Theme.LIGHT ? colors.mainColor[800] : colors.white[100]}
+    opacity: 0.5;
+    color: ${(props) =>
+      props.$theme === Theme.LIGHT ? colors.mainColor[800] : colors.white[100]};
   }
 
   &:focus {
@@ -44,6 +55,6 @@ export const StyledInput = styled.textarea<{ $theme: Theme }>`
 
 export const StyledErrorMessage = styled.span`
   font-size: 12px;
-  color: 'red';
+  color: #fa5c19;
   font-family: Roboto;
 `

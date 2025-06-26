@@ -48,6 +48,7 @@ const TextInput = ({
         value={value}
         name={name}
         $theme={theme}
+        $hasError={!!error}
       />
       {error && <StyledErrorMessage>{error}</StyledErrorMessage>}
     </StyledWrapper>

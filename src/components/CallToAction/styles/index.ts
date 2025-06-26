@@ -4,7 +4,10 @@ import { Paddings } from '../../../constants/paddings'
 import { Theme } from '../../../hoc/Theme/types'
 import { colors } from '../../../constants/colors'
 
-export const StyledWrapper = styled.button<{ $theme: Theme }>`
+export const StyledWrapper = styled.button<{
+  $theme: Theme
+  $disabled?: boolean
+}>`
   width: fit-content;
   height: 50px;
   border-radius: 25px;
@@ -13,7 +16,7 @@ export const StyledWrapper = styled.button<{ $theme: Theme }>`
   justify-content: center;
   box-sizing: border-box;
   padding: ${Paddings.P4} ${Paddings.P6};
-  cursor: pointer;
+  cursor: ${(props) => (props.$disabled ? 'default' : 'pointer')};
   border: solid 1px;
   border-color: ${(props) =>
     props.$theme === Theme.DARK ? colors.white[50] : colors.mainColor[600]};
@@ -21,11 +24,15 @@ export const StyledWrapper = styled.button<{ $theme: Theme }>`
     props.$theme === Theme.LIGHT ? colors.white[50] : colors.mainColor[600]};
   position: relative;
   overflow: hidden;
+  opacity: ${(props) => (props.$disabled ? '0.5' : '1')};
 
-  &:hover span {
-    color: ${(props) =>
-      props.$theme === Theme.LIGHT ? colors.white[50] : colors.mainColor[600]};
-  }
+  ${(props) =>
+    !props.$disabled &&
+    `&:hover span {
+    color: ${
+      props.$theme === Theme.LIGHT ? colors.white[50] : colors.mainColor[600]
+    };
+  }`}
 
   &::after {
     display: block;
@@ -43,9 +50,11 @@ export const StyledWrapper = styled.button<{ $theme: Theme }>`
     border-radius: 25px;
   }
 
-  &:hover::after {
+  ${(props) =>
+    !props.$disabled &&
+    `&:hover::after {
     transform: translateX(0);
-  }
+  }`}
 `
 
 export const StyledText = styled.span<{ $theme: Theme }>`
