@@ -5,6 +5,9 @@ export enum Skills {
   WORDPRESS = 'Wordpress',
   PHP = 'PHP',
   C = 'C',
+  LARAVEL = 'Laravel',
+  DJANGO = 'Django',
+  PYTHON = 'Python'
 }
 
 export type Project = {

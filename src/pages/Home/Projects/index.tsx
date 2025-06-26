@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 
-import BaseSection from '../../parts/BaseSection'
 import Title from '../../../components/Title'
 import { colors } from '../../../constants/colors'
 import { themeContext } from '../../../contexts/theme'
 import { Theme } from '../../../hoc/Theme/types'
-import { StyledProjectsGrid } from './styles'
 import { projects } from '../../../data'
 import ProjectCard from '../../../components/ProjectCard'
+import BaseSection from '../../parts/BaseSection'
+import { StyledProjectsGrid } from './styles'
 
 const Projects = () => {
   const { theme } = useContext(themeContext)

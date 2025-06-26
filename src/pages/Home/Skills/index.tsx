@@ -60,7 +60,7 @@ const Skills = () => {
         }}
         type="h3"
       >
-        If you want to discover more about me, you can also download my resume !
+        If you want to discover more about me and my experiences, you can also download my resume !
       </Title>
       <CallToAction
         onClick={handleClickDownload}
