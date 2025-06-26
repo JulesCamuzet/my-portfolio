@@ -39,8 +39,10 @@ export const StyledImg = styled.img`
   object-fit: cover;
   object-position: center;
   border-radius: 1000px;
-  /* border: solid ${colors.mainColor[200]} 1px; */
   box-shadow: 0 0 16px 16px white inset;
+
+  box-shadow: 0 0 10px ${colors.mainColor[200]},
+    0 0 20px ${colors.mainColor[400]}, 0 0 40px ${colors.mainColor[600]};
 `
 
 export const StyledNetworksContainer = styled.div<{ $theme: Theme }>`

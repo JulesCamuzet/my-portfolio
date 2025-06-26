@@ -9,7 +9,7 @@ type PropsType = {
 }
 
 const ThemeHOC = ({ children }: PropsType) => {
-  const [theme, setTheme] = useState<Theme>(Theme.LIGHT)
+  const [theme, setTheme] = useState<Theme>(Theme.DARK)
 
   const handleClick = () => {
     setTheme((prev) => (prev === Theme.DARK ? Theme.LIGHT : Theme.DARK))
