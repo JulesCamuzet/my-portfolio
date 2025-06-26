@@ -1,6 +1,6 @@
 import React, { RefObject, useEffect, useState } from 'react'
 
-import { checkIsVisible } from './helpers/checkIsVisible'
+import { checkIsVisible } from '../helpers/checkIsVisible'
 
 type PropsType = {
   elementRef: RefObject<HTMLDivElement | null>

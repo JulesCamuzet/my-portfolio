@@ -19,6 +19,7 @@ import {
   StyledOutput,
   StyledWrapper,
 } from './styles'
+import useMediaQuery from '../../../hooks/useMediaQuery'
 
 const Console = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,6 +27,8 @@ const Console = () => {
   const [output, setOutput] = useState(initialOutput)
   const [isFocus, setIsFocus] = useState(false)
   const [cursorIndex, setCursorIndex] = useState(0)
+
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const { theme } = useContext(themeContext)
 
@@ -82,6 +85,10 @@ const Console = () => {
 
   const handleBlur: FocusEventHandler<HTMLInputElement> = (e) => {
     setIsFocus(false)
+  }
+
+  if (isMobile) {
+    return null
   }
 
   return (
