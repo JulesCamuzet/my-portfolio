@@ -145,7 +145,7 @@ const Form = () => {
         disabled={hasBeenSubmitted && hasErrors}
         onClick={handleClickSend}
       >
-        Envoyer
+        Send message
       </CallToAction>
       {error && <StyledErrorMessage $theme={theme}>{error}</StyledErrorMessage>}
       {sucess && (

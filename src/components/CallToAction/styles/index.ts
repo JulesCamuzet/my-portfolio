@@ -25,10 +25,18 @@ export const StyledWrapper = styled.button<{
   position: relative;
   overflow: hidden;
   opacity: ${(props) => (props.$disabled ? '0.5' : '1')};
+  transition: border-color.4s;
 
   ${(props) =>
     !props.$disabled &&
-    `&:hover span {
+    `
+    &:hover {
+      border-color: ${
+        props.$theme === Theme.LIGHT ? colors.white[50] : colors.mainColor[600]
+      }
+    }
+    
+    &:hover span {
     color: ${
       props.$theme === Theme.LIGHT ? colors.white[50] : colors.mainColor[600]
     };
