@@ -3,13 +3,14 @@ import React, { useContext } from 'react'
 import { themeContext } from '../../contexts/theme'
 import { colors } from '../../constants/colors'
 import Console from '../parts/Console'
+import Footer from '../parts/Footer'
+import Wave from '../parts/Wave'
 import { Hero } from './Hero'
 import Projects from './Projects'
-import Wave from '../parts/Wave'
-import { StyledWrapper } from './styles'
 import { Theme } from '../../hoc/Theme/types'
 import Skills from './Skills'
 import Contact from './Contact'
+import { StyledWrapper } from './styles'
 
 const HomePage = () => {
   const { theme } = useContext(themeContext)
@@ -35,6 +36,7 @@ const HomePage = () => {
       />
       <Contact />
       <Console />
+      <Footer />
     </StyledWrapper>
   )
 }
