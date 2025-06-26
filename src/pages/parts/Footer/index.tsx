@@ -7,10 +7,10 @@ import { themeContext } from '../../../contexts/theme'
 import { Theme } from '../../../hoc/Theme/types'
 import { Margins } from '../../../constants/margins'
 import GithubIcon from '../../../components/icons/Github'
+import useMediaQuery from '../../../hooks/useMediaQuery'
 import LinkedinIcon from '../../../components/icons/Linkedin'
 import BaseSection from '../BaseSection'
 import { StyledLogoContainer } from './styles'
-import useMediaQuery from '../../../hooks/useMediaQuery'
 
 const Footer = () => {
   const { theme } = useContext(themeContext)
