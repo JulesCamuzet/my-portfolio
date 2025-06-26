@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import { themeContext } from '../../contexts/theme'
 import { colors } from '../../constants/colors'
+import Console from '../parts/Console'
 import { Hero } from './Hero'
 import Projects from './Projects'
 import Wave from '../parts/Wave'
@@ -33,6 +34,7 @@ const HomePage = () => {
         style={{ transform: 'translateY(-10px) rotate(180deg)' }}
       />
       <Contact />
+      <Console />
     </StyledWrapper>
   )
 }
