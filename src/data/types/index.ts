@@ -23,8 +23,4 @@ export type SkillCard = {
   img: string
 }
 
-export type SkillsData = {
-  primaries: SkillCard[]
-  secondaries: SkillCard[]
-  tertiaries: SkillCard[]
-}
+export type SkillsData = SkillCard[]
