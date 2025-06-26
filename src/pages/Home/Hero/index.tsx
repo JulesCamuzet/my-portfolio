@@ -7,6 +7,8 @@ import { Theme } from '../../../hoc/Theme/types'
 import { colors } from '../../../constants/colors'
 import Title from '../../../components/Title'
 import Text from '../../../components/Text'
+import CallToAction from '../../../components/CallToAction'
+import { Margins } from '../../../constants/margins'
 import { themeContext } from '../../../contexts/theme'
 import BaseSection from '../../parts/BaseSection'
 import {
@@ -17,13 +19,11 @@ import {
   StyledTextPart,
 } from './styles'
 import Particles from './Particles'
-import CallToAction from '../../../components/CallToAction'
-import { Margins } from '../../../constants/margins'
-
-import picture from 'url:../../../../public/assets/images/jules-camuzet.jpeg'
 
 export const Hero = () => {
   const { theme } = useContext(themeContext)
+
+  const pictureUrl = `${process.env.API_URL}/images/jules-camuzet.jpeg`
 
   return (
     <BaseSection
@@ -71,10 +71,12 @@ export const Hero = () => {
               />
             </Link>
           </StyledNetworksContainer>
-          <CallToAction style={{ marginTop: Margins.M8 }} onClick={() => {}}>Get in touch</CallToAction>
+          <CallToAction style={{ marginTop: Margins.M8 }} onClick={() => {}}>
+            Get in touch
+          </CallToAction>
         </StyledTextPart>
         <StyledPicturePart>
-          <StyledImg src={picture} srcSet={picture} alt="Jules Camuzet" />
+          <StyledImg src={pictureUrl} srcSet={pictureUrl} alt="Jules Camuzet" />
         </StyledPicturePart>
       </StyledContainer>
     </BaseSection>
