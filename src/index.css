@@ -17,6 +17,10 @@
   transition: color.4s, background-color.4s, background.4s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;

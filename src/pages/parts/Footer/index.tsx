@@ -27,14 +27,14 @@ const Footer = () => {
         alignItems: 'center',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        gap: Margins.M3
+        gap: Margins.M3,
       }}
     >
       <Text noMargin big>
         💖 Let's connect and build something amazing together!
       </Text>
       <StyledLogoContainer>
-        <Link to={'github.com'} target="_blank">
+        <Link to={'https://linktr.ee/julescamuzet'} target="_blank">
           <GithubIcon
             color={
               theme === Theme.DARK ? colors.white[50] : colors.mainColor[800]
@@ -42,7 +42,10 @@ const Footer = () => {
             pointer
           />
         </Link>
-        <Link to={'linkedin.com'} target="_blank">
+        <Link
+          to={'https://www.linkedin.com/in/jules-camuzet-616805258/'}
+          target="_blank"
+        >
           <LinkedinIcon
             color={
               theme === Theme.DARK ? colors.white[50] : colors.mainColor[800]

@@ -10,7 +10,7 @@ const Contact = () => {
   const enableMap = process.env.ENABLE_MAP === '1'
 
   return (
-    <BaseSection tall>
+    <BaseSection tall htmlId='contact'>
       <Title type="h2">Get in touch</Title>
       <StyledContent>
         <Form />

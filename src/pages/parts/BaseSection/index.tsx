@@ -8,6 +8,7 @@ type PropsType = {
   background?: string
   style?: CSSProperties
   contentStyle?: CSSProperties
+  htmlId?: string
 }
 
 const BaseSection = ({
@@ -16,9 +17,15 @@ const BaseSection = ({
   style,
   tall,
   contentStyle,
+  htmlId,
 }: PropsType) => {
   return (
-    <StyledWrapper style={style} $background={background} $tall={tall}>
+    <StyledWrapper
+      id={htmlId}
+      style={style}
+      $background={background}
+      $tall={tall}
+    >
       <StyledContent style={contentStyle}>{children}</StyledContent>
     </StyledWrapper>
   )

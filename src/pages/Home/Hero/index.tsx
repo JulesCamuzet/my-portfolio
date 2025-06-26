@@ -23,6 +23,10 @@ import Particles from './Particles'
 export const Hero = () => {
   const { theme } = useContext(themeContext)
 
+  const handleScrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView()
+  }
+
   const pictureUrl = `${process.env.API_URL}/images/jules-camuzet.jpeg`
 
   return (
@@ -50,7 +54,7 @@ export const Hero = () => {
             offer when building user-facing applications.
           </Text>
           <StyledNetworksContainer $theme={theme}>
-            <Link target="_blank" to={'https://github.com'}>
+            <Link target="_blank" to={'https://linktr.ee/julescamuzet'}>
               <GithubIcon
                 color={
                   theme === Theme.DARK
@@ -60,7 +64,7 @@ export const Hero = () => {
                 pointer
               />
             </Link>
-            <Link target="_blank" to={'https://linkedin.com'}>
+            <Link target="_blank" to={'https://www.linkedin.com/in/jules-camuzet-616805258/'}>
               <LinkedinIcon
                 color={
                   theme === Theme.DARK
@@ -71,7 +75,10 @@ export const Hero = () => {
               />
             </Link>
           </StyledNetworksContainer>
-          <CallToAction style={{ marginTop: Margins.M8 }} onClick={() => {}}>
+          <CallToAction
+            style={{ marginTop: Margins.M8 }}
+            onClick={handleScrollToContact}
+          >
             Get in touch
           </CallToAction>
         </StyledTextPart>
