@@ -1,6 +1,7 @@
 import React, { useContext, useMemo } from 'react'
 
 import { themeContext } from '../../../../contexts/theme'
+import useMediaQuery from '../../../../hooks/useMediaQuery'
 import { StyledWrapper } from './styles'
 import Particle from './Particle'
 
@@ -15,6 +16,8 @@ const getRandomColorIndex = () => {
 
 const Particles = () => {
   const { theme } = useContext(themeContext)
+
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const blobs = useMemo<
     { colorIndex: string; size: number; top: number; left: number }[]
@@ -39,6 +42,7 @@ const Particles = () => {
           top={blob.top}
           left={blob.left}
           theme={theme}
+          isMobile={isMobile}
         />
       ))}
     </StyledWrapper>

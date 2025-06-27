@@ -11,6 +11,7 @@ export const StyledWrapper = styled.div<{
   $size: number
   $top: number
   $left: number
+  $isMobile: boolean
 }>`
   position: absolute;
   width: ${({ $size }) => $size}px;
@@ -20,6 +21,6 @@ export const StyledWrapper = styled.div<{
   background: ${({ $color }) => $color};
   border-radius: 50%;
   filter: blur(5px);
-  opacity: 0.6;
+  opacity: ${props => props.$isMobile ? 0.3 : 0.6};
   animation: ${float} ${({ $size }) => 10 + ($size % 6)}s ease-in-out infinite;
 `
