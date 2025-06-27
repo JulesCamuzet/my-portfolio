@@ -41,17 +41,16 @@ export const Hero = () => {
           <Title>Jules Camuzet</Title>
           <Title type="h2">Developer</Title>
           <Text big>
-            Passionate about computer science and development, I am seeking a
-            work-study opportunity starting in October to further enhance my
-            skills and contribute meaningfully to innovative and impactful
+            I’m passionate about computer science and development. I enjoy
+            designing solutions that combine creativity and structured logic to
+            meet real-world needs. What drives me is the opportunity to build
+            useful, well-crafted applications that have a positive impact.
+            <br />
+            I’m currently working as a freelance developer, taking on projects
+            that allow me to strengthen my skills and collaborate with others.
+            At the same time, I’m looking for a work-study opportunity, where I
+            can continue learning and contribute to meaningful and innovative
             projects.
-            <br />I see computer science as the ideal mix of creative thinking
-            and structured logic. While I’ve spent more time with high-level
-            tools like React, I’m also interested in low-level programming as it
-            offers a deeper understanding of how everything works beneath the
-            surface. At the same time, I truly enjoy working with high-level
-            frameworks for the speed, flexibility, and creative freedom they
-            offer when building user-facing applications.
           </Text>
           <StyledNetworksContainer $theme={theme}>
             <Link target="_blank" to={'https://linktr.ee/julescamuzet'}>
@@ -64,7 +63,10 @@ export const Hero = () => {
                 pointer
               />
             </Link>
-            <Link target="_blank" to={'https://www.linkedin.com/in/jules-camuzet-616805258/'}>
+            <Link
+              target="_blank"
+              to={'https://www.linkedin.com/in/jules-camuzet-616805258/'}
+            >
               <LinkedinIcon
                 color={
                   theme === Theme.DARK
