@@ -11,12 +11,12 @@ type Output = {
 
 export const getErrors = (data: ContactFormData): Output => {
   return {
-    firstName: data.firstName === '' ? 'Ce champs est obligatoire.' : '',
-    lastName: data.lastName === '' ? 'Ce champs est obligatoire.' : '',
+    firstName: data.firstName === '' ? 'This field is required.' : '',
+    lastName: data.lastName === '' ? 'This field is required.' : '',
     email: !checkEmailFormat(data.email)
-      ? "Le format de l'email est icorrect."
+      ? "Wrong email format."
       : '',
-    subject: data.subject === '' ? 'Ce champs est obligatoire.' : '',
-    message: data.message === '' ? 'Ce champs est obligatoire.' : '',
+    subject: data.subject === '' ? 'This field is required.' : '',
+    message: data.message === '' ? 'This field is required.' : '',
   }
 }
